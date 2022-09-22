@@ -262,14 +262,17 @@
 
         <div class="row no-gutters" data-aos="fade-up">
 
-          {% for feature in features %}
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="100"> 
-            <span>{{feature.id}}</span>
-            <h4>{{feature.name}}</h4>
-            <p>{{feature.details}}</p>
+          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
+            <span>05</span>
+            <h4>Sapiente Magnam</h4>
+            <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
           </div>
-          {% endfor %}
 
+          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
+            <span>05</span>
+            <h4>Sapiente Magnam</h4>
+            <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
+          </div>
           
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
             <span>05</span>
@@ -299,15 +302,27 @@
         </div>
 
         <div class="row">
+          {% for feature in features %}
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <span>{{feature.id}}</span>
+              <h4 class="title"><a href="">{{feature.name}}</a></h4>
+              <p class="description">{{feature.details}}</p>
+              
+
+
+              <!-- ======== WE DON'T NEED THIS IF STATEMENT IN THE MEANTIME ===============-->
+              <!--{% if feature.name == 'Trustworthy' %}
+              <p> We keep our word </p>
+              {% else %}
+              <p> This feature is debatable depending with how you view it. Let's just try</p>
+              {% endif %}-->
             </div>
           </div>
+          {% endfor %}
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+          <!--<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
@@ -329,7 +344,7 @@
               <h4 class="title"><a href="">Nemo Enim</a></h4>
               <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
             </div>
-          </div>
+          </div>-->
 
         </div>
 
