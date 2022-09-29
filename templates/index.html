@@ -7,12 +7,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Bikin Bootstrap Template - Index</title>
+  <title> e-clinic for private Consultation </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <!-- Flaticons -->
+  <link href="{% static 'assets/img/flaticon.png' %}" rel="icon">
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -30,10 +30,7 @@
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: Bikin - v4.9.0
-  * Template URL: https://bootstrapmade.com/bikin-free-simple-landing-page-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
+  Intro
   ======================================================== -->
 </head>
 
@@ -43,37 +40,42 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Bikin</a></h1>
+      <h1 class="logo"><a href="index.html">E-clinic</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <!--<a href="index.html" class="logo"><img src="assets/img/stethoscope.jpg" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto " href="#portfolio">Talk to a Doctor</a></li>
+          <li><a class="nav-link scrollto" href="#team">Our Team</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Pay bills</a></li>
+          <li class="dropdown"><a href="#"><span>Need Help?</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="#">Book an Appointment</a></li>
+              <li class="dropdown"><a href="#"><span> One click-away Services </span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="#">Seeking available doctor</a></li>
+                  <li><a href="#">Choosing my Preferred time</a></li>
+                  <li><a href="#">Walk in Offices</a></li>
+                  <li><a href="#">Therapists</a></li>
+                  <li><a href="#">Music and Religious therapy</a></li>
                 </ul>
               </li>
-              <li><a href="#">Drop Down 2</a></li>
+              <!--<li><a href="#">Drop Down 2</a></li>
               <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 4</a></li>-->
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          {% if user.is_authenticated %}
+          <li><a class="getstarted scrollto" href="logout">LogOut</a></li>
+          {% else %}
+          <li><a class="getstarted scrollto" href="login">LogIn</a></li>
+          <li><a class="getstarted scrollto" href="register">SignUp</a></li>
+          {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -85,10 +87,14 @@
   <section id="hero" class="d-flex align-items-center">
 
     <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
-      <h1>Build Better Websites With Bikin</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      {% if user.is_authenticated %}
+      <h1>Welcome, {{user.username}}</h1>
+      {% else %}
+      <h1> Welcome to e-clinic, Good counsel for better Health </h1>
+      {% endif %}
+      <h2>We are here for you and with you every step of the way!</h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
-      <img src="{% static 'assets/img/hero-img.png' %}" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+      <img src="{% static 'assets/img/consultation.webp' %}" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
     </div>
 
   </section><!-- End Hero -->
@@ -102,11 +108,11 @@
         <div class="row no-gutters">
           <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
             <div class="content">
-              <h3>Voluptatem dignissimos provident quasi</h3>
+              <h3>E-clinic Doctors and Therapy sessions</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                The e-clinic technology blends in Telemedicine and virtual connection through a two-way video chat with specialists, trained care-givers, highly qualified doctors and therapists, certified counsellors across the globe. They simply assist you as an individual and the people you care about know how manage stress and live happy. 
               </p>
-              <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
+              <a href="/" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
             </div>
           </div>
           <div class="col-xl-7 d-flex align-items-stretch" data-aos="fade-left">
@@ -114,23 +120,23 @@
               <div class="row">
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-receipt"></i>
-                  <h4>Corporis voluptates sit</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <h4>Global Clinic</h4>
+                  <p>We offer our services globally with our head office situated in Lomalinda- USA</p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                   <i class="bx bx-cube-alt"></i>
-                  <h4>Ullamco laboris nisi</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                  <h4>Counselling services</h4>
+                  <p>Our specialist offer tailored advice</p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                   <i class="bx bx-images"></i>
-                  <h4>Labore consequatur</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                  <h4>Seamless</h4>
+                  <p>The world and the people in it today seek for seamless web services and leverage into our technological know-how to make our processes smooth </p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                   <i class="bx bx-shield"></i>
-                  <h4>Beatae veritatis</h4>
-                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                  <h4>Christian-based</h4>
+                  <p>We believe in God as the source of strength, peace and joy. "Thou shalt keep him in perfect peace, him whose mind is stayed upon you".</p>
                 </div>
               </div>
             </div><!-- End .content-->
